@@ -9,24 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var objectBrandLabel: UILabel!
-    @IBOutlet weak var objectColorLabel: UILabel!
-    @IBOutlet weak var objectPriceLabel: UILabel!
+    @IBOutlet weak var learnerNameLabel: UILabel!
+    @IBOutlet weak var learnerAgeLabel: UILabel!
+    @IBOutlet weak var learnerGenderLabel: UILabel!
     
-    var objectInstance: objectModel? // You just created a copy of your LearnerModel
+    var learnerInstance: LearnerModel?
+    var facilitatorInstance: FacilitatorModel?// You just created a copy of your LearnerModel
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        objectInstance = objectModel (brandObject: "Givenchy", colorObject: "Pink", priceObject: 15000000)
+        learnerInstance = LearnerModel (nameLearner: "Cindy", ageLearner: 20, genderLearner: "Female", imageProfileLearner: "")
         updateUI()
     }
 
     func updateUI() {
-        if let instance = objectInstance {
-           objectBrandLabel.text = instance.brand
-            objectColorLabel.text = instance.color
-           objectPriceLabel.text = "Rp \(instance.price)"
+        if let instance = learnerInstance {
+          learnerNameLabel.text = instance.name
+        learnerAgeLabel.text = "\(instance.age)"
+         learnerGenderLabel.text = instance.gender
 
         }
     }
